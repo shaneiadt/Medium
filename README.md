@@ -7,3 +7,4 @@ Built with the below tech stack:
 - Sanity CMS
 - Vercel
 - Tailwinds CSS v3
+- NextJs
