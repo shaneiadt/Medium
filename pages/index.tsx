@@ -33,7 +33,7 @@ const Home: NextPage<Props> = ({ posts }: Props) => {
         {posts.map(post => (
           <Link
             key={post._id}
-            href={`/posts/${post.slug.current}`}
+            href={`/post/${post.slug.current}`}
           >
             <div className='group cursor-pointer border rounded-lg overflow-hidden'>
               <img className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(post.mainImage).url()!} alt="" />
