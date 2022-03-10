@@ -57,6 +57,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const post = await sanityClient.fetch(query);
 
+  if (Object.keys(post).length === 0) return { notFound: true };
+
   return {
     props: {
       post
