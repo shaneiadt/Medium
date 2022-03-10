@@ -31,6 +31,14 @@ const Post = ({ post: { mainImage, title, description, author, _createdAt, body 
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             content={body}
+            serializers={
+              {
+                h1: (props: any) => <h1 className='text-2xl font-bold my-5' {...props} />,
+                h2: (props: any) => <h2 className='text-xl font-bold my-5' {...props} />,
+                li: ({ children }: any) => <li className='ml-4 list-disc'>{children}</li>,
+                link: ({ href, children }: any) => <a href={href} target='_blank' className='text-blue-500 hover:underline'>{children}</a>,
+              }
+            }
           />
         </div>
       </article>
