@@ -26,7 +26,7 @@ const Post = ({ post: { mainImage, title, description, author, _createdAt, body 
           <p className='font-extralight text-sm'>Bloy post by <span className='text-green-600'>{author.name}</span> - Published at {new Date(_createdAt).toLocaleString()}</p>
         </div>
 
-        <div>
+        <div className='mt-10'>
           <PortableText
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
