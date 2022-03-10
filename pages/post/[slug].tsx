@@ -1,5 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react'
+import PortableText from 'react-portable-text';
+
 import { Header } from '../../components/Header';
 import { sanityClient, urlFor } from '../../sanity';
 import { Post } from '../../typings';
@@ -8,7 +10,7 @@ interface Props {
   post: Post;
 }
 
-const Post = ({ post: { mainImage, title, description, author, _createdAt } }: Props) => {
+const Post = ({ post: { mainImage, title, description, author, _createdAt, body } }: Props) => {
   return (
     <main>
       <Header />
@@ -22,6 +24,14 @@ const Post = ({ post: { mainImage, title, description, author, _createdAt } }: P
         <div className='flex items-center space-x-2'>
           <img className='h-10 w-10 rounded-full' src={urlFor(author.image).url()} alt={author.name} />
           <p className='font-extralight text-sm'>Bloy post by <span className='text-green-600'>{author.name}</span> - Published at {new Date(_createdAt).toLocaleString()}</p>
+        </div>
+
+        <div>
+          <PortableText
+            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+            content={body}
+          />
         </div>
       </article>
     </main>
