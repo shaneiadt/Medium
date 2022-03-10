@@ -62,6 +62,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       post
-    }
+    },
+    revalidate: 86400, // after 1 day cache will update/revalidate (ISR)
   }
 }
