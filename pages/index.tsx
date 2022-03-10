@@ -29,7 +29,7 @@ const Home: NextPage<Props> = ({ posts }: Props) => {
         <img className="hidden md:inline-flex h-32 lg:h-full" src="https://accountabilitylab.org/wp-content/uploads/2020/03/Medium-logo.png" alt="M - Logo" />
       </div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 py-2 md:py-6'>
         {posts.map(post => (
           <Link
             key={post._id}
@@ -39,7 +39,7 @@ const Home: NextPage<Props> = ({ posts }: Props) => {
               <img className='h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out' src={urlFor(post.mainImage).url()!} alt="" />
 
               <div className='flex justify-between p-5 bg-white'>
-                <div>
+                <div className='basis-3/4'>
                   <p className='text-lg font-bold'>{post.title}</p>
                   <p className='text-xs'>{post.description} by {post.author.name}</p>
                 </div>
