@@ -42,6 +42,27 @@ const Post = ({ post: { mainImage, title, description, author, _createdAt, body 
           />
         </div>
       </article>
+
+      <hr className='max-w-lg mx-auto my-5 border border-yellow-500' />
+
+      <form className='flex flex-col p-5 my-10 max-w-2xl mx-auto mb-10'>
+        <h3 className='text-yellow-500 text-sm'>Enjoyed this article?</h3>
+        <h3 className='font-bold text-3xl'>Leave a comment below!</h3>
+        <hr className='py-3 mt-2' />
+
+        <label className='block mb-5'>
+          <span className='text-gray-700'>Name</span>
+          <input className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring-1' type="text" placeholder='John Smith' />
+        </label>
+        <label className='block mb-5'>
+          <span className='text-gray-700'>Email</span>
+          <input className='shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring-1' type="text" placeholder='John Smith' />
+        </label>
+        <label className='block mb-5'>
+          <span className='text-gray-700'>Comment</span>
+          <textarea className='shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring-1' rows={8} />
+        </label>
+      </form>
     </main>
   )
 }
