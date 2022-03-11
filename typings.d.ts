@@ -6,6 +6,13 @@ export interface Post {
     name: string
     image: string
   }
+  comments: {
+    _createdAt: string;
+    _id: string;
+    name: string;
+    email: string;
+    comment: string;
+  }[],
   description: string
   mainImage: {
     asset: {

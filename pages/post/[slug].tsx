@@ -18,7 +18,7 @@ interface IFormInput {
   comment: string;
 }
 
-const Post = ({ post: { _id, mainImage, title, description, author, _createdAt, body } }: Props) => {
+const Post = ({ post: { _id, mainImage, title, description, author, _createdAt, body, comments } }: Props) => {
   const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>();
   const [submitted, setSubmitted] = useState(false);
 
@@ -152,7 +152,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
     'comments': *[
       _type == "comment" &&
-      post.ref == ^._id &&
+      references(^._id) &&
       approved == true],
     description,
     mainImage,
@@ -168,6 +168,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       post
     },
-    revalidate: 86400, // after 1 day cache will update/revalidate (ISR)
+    // revalidate: 86400, // after 1 day cache will update/revalidate (ISR)
   }
 }
