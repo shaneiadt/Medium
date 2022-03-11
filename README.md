@@ -4,7 +4,8 @@ Built with the below tech stack:
 
 - React
 - Typescript
-- Sanity CMS (https://medium-content.sanity.studio/)
+- React Hooks Form
+- Sanity CMS
 - Vercel
 - Tailwinds CSS v3
 - NextJs
