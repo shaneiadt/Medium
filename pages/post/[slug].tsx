@@ -115,6 +115,16 @@ const Post = ({ post: { _id, mainImage, title, description, author, _createdAt, 
         </form>
       )}
 
+      <div className='p-10 my-10 mx-auto max-w-2xl shadow shadow-yellow-500 space-y-2'>
+        <h3 className='text-4xl'>Comments</h3>
+        <hr className='pb-2' />
+        {comments.map(({ name, comment, _id }) => (
+          <div key={_id}>
+            <p><span className='text-yellow-500'>{name}</span>: {comment}</p>
+          </div>
+        ))}
+      </div>
+
     </main>
   )
 }
